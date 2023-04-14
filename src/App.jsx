@@ -4,6 +4,7 @@ const API_KEY = "120dbbf960msh3b1dc96d2563f33p17472djsnc2a87881d164";
 
 const LiveScores = () => {
   const [games, setGames] = useState([]);
+  const [schedule, setSchedule] = useState([]);
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -15,14 +16,24 @@ const LiveScores = () => {
         },
       };
 
-      const response = await fetch(
+      // Fetch live game scores
+      const liveScoresResponse = await fetch(
         "https://nhl-api5.p.rapidapi.com/nhlsbox?id=401458986",
         options
       );
-      const data = await response.json();
-      console.log(data)
-      if (data.games) {
-        setGames(data.games);
+      const liveScoresData = await liveScoresResponse.json();
+      if (liveScoresData.games) {
+        setGames(liveScoresData.games);
+      }
+
+      // Fetch NHL schedule
+      const scheduleResponse = await fetch(
+        "https://nhl-api5.p.rapidapi.com/nhlschedule?year=2022&month=05&day=11",
+        options
+      );
+      const scheduleData = await scheduleResponse.json();
+      if (scheduleData.dates && scheduleData.dates[0].games) {
+        setSchedule(scheduleData.dates[0].games);
       }
     };
 
@@ -30,19 +41,36 @@ const LiveScores = () => {
   }, []);
 
   return (
-    <div>
+    <div className="live-scores-container">
       <h2>Live Scores</h2>
-      {games.map((game) => (
-        <div key={game.gamePk}>
-          <p>{game.teams.away.team.name}</p>
-          <p>{game.teams.home.team.name}</p>
-          <p>{game.livescore.currentPeriodOrdinal}</p>
-          <p>
-            {game.livescore.teams.away.goals} -{" "}
-            {game.livescore.teams.home.goals}
-          </p>
-        </div>
-      ))}
+      {games.length > 0 ? (
+        games.map((game) => (
+          <div key={game.gamePk} className="game-box">
+            <p>{game.teams.away.team.name}</p>
+            <p>{game.teams.home.team.name}</p>
+            <p>{game.livescore.currentPeriodOrdinal}</p>
+            <p>
+              {game.livescore.teams.away.goals} -{" "}
+              {game.livescore.teams.home.goals}
+            </p>
+          </div>
+        ))
+      ) : (
+        <p>No live games</p>
+      )}
+
+      <h2>NHL Schedule</h2>
+      {schedule.length > 0 ? (
+        schedule.map((game) => (
+          <div key={game.gamePk} className="game-box">
+            <p>{game.teams.away.team.name}</p>
+            <p>{game.teams.home.team.name}</p>
+            <p>{game.gameDate}</p>
+          </div>
+        ))
+      ) : (
+        <p>No scheduled games</p>
+      )}
     </div>
   );
 };
