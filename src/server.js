@@ -1,0 +1,1 @@
+// app.get('/api/terms', (req, res) => res.json(termData));
