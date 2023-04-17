@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import background from "./assets/NHL_Logo.png";
 
 const API_KEY = "120dbbf960msh3b1dc96d2563f33p17472djsnc2a87881d164";
 
 const LiveScores = () => {
-  const [games, setGames] = useState([]);
-  const [schedule, setSchedule] = useState([]);
+//   const [games, setGames] = useState([]);
+//   const [schedule, setSchedule] = useState([]);
 
 //   const fetchGames = async () => {
 //     const options = {
@@ -40,28 +41,28 @@ const LiveScores = () => {
 //   };
  
   
-  let timeHandler = (time) => {
-    let start = time.indexOf("T")
-    let end = time.indexOf("Z")
-    let num = parseInt(time.substring(start, end).replace("T", "").replace(":", ""));
-    console.log(num)
-  if ( num == 0) {
-    num = 2400;
-    console.log(num)
-  }else {num = parseInt(time.substring(start, end).replace("T", "").replace(":", ""))};
-  let temp = (num- 400) > 1200 ? num-400 - 1200 +"pm EST" : num-400+"am EST";
+//   let timeHandler = (time) => {
+//     let start = time.indexOf("T")
+//     let end = time.indexOf("Z")
+//     let num = parseInt(time.substring(start, end).replace("T", "").replace(":", ""));
+//     console.log(num)
+//   if ( num == 0) {
+//     num = 2400;
+//     console.log(num)
+//   }else {num = parseInt(time.substring(start, end).replace("T", "").replace(":", ""))};
+//   let temp = (num- 400) > 1200 ? num-400 - 1200 +"pm EST" : num-400+"am EST";
 
-  console.log(temp)
-}
+//   console.log(temp)
+// }
 
 
-  useEffect(() => {
-    // fetchGames();
-   timeHandler("2023-04-15T00:00Z")
-  }, []);
+//   useEffect(() => {
+//  fetchGames();
+//    timeHandler("2023-04-15T00:00Z")
+//   }, []);
 
-  return (
-//     <div className="live-scores-container">
+//   return (
+//     <div className="live-scores-container" style={{backgroundImage: `url(${background})` }}>
 //        <h2>Live Scores</h2>
 //       {games.length > 0 ? (
 //         games.map((game) => (
@@ -75,6 +76,7 @@ const LiveScores = () => {
 //             </p>
 //           </div>
 //         ))
+
 //       ) : (
 //         <p>No live games</p>
 //       )}
@@ -91,16 +93,36 @@ const LiveScores = () => {
 //           </div>
 //         );
 //       })}
-    <section>
-      <h2>NHL Schedule</h2>
-      <div className="game-box">
-             <p>gameshortName</p>
-             <p> Date & Time:  </p>
-             <p> Period:  </p>
-           </div>
-    </section>
 //     </div>
- );
- };
+//  );
+return (
+
+<div className="full-container">
+  <img src={background} alt="NHL LOGO" />
+  <div className="card">
+<h2 class="title">Live Scores</h2>
+<div className="live-box">
+<section>
+<p>Home team</p>
+<p>Away team</p>
+<p>Period: #</p>
+<p>Home team Goals #</p> 
+<p>Home team Goals #</p> 
+</section>
+</div>
+
+<section>
+<h2 class="title">NHL Schedule</h2>
+<div className="game-box">
+ <p>gameshortName</p>
+<p> Date & Time:  </p>
+ <p> Period:  </p>
+</div>
+</section>
+</div>  
+</div>
+
+)
+}
 
 export default LiveScores;

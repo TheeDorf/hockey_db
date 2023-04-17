@@ -1,14 +1,55 @@
+.full-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  position: relative;
+  /* background-image:  linear-gradient(to top, transparent, white 150%), url('./assets/NHL_Logo.png');
+  background-size: 1000px 1000px;
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+img{
+  opacity: 0.3;
+  
+}
+
+.card{
+  position: absolute;
+  top: 70px;
+}
+
 .live-scores-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
+ 
+
 }
 
-.game-box {
-  border: 1px solid black;
+.live-box{
+  border: 5px solid black;
   padding: 20px;
   margin-bottom: 10px;
   color: black;
   background-color: silver;
+}
+
+.game-box {
+  border: 5px solid black;
+  padding: 20px;
+  margin-bottom: 10px;
+  
+  color: black;
+  background-color: silver;
 
 }
+
+.title{
+  color: black;
+  font-size: 300%;
+}
+
+
