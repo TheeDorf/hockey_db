@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import background from "./assets/NHL_Logo.png";
 
-const API_KEY = '120dbbf960msh3b1dc96d2563f33p17472djsnc2a87881d164';
+const API_KEY = '7bcd177ad7msh9689b07a03187b0p1a9c0cjsnbedef803833a';
 
 const LiveScores = () => {
   const [games, setGames] = useState([]);
@@ -93,11 +93,13 @@ let timeHandler = (time) => {
         return (
           <div className="game-box">
             <p>{ game.name }</p>
+            <p> { game.competitions[0].competitors[1].team.logo } { game.competitions[0].competitors[0].team.logo }       </p>
+            <p> Away Score: { game.competitions[0].competitors[1].score } --- Home Score: { game.competitions[0].competitors[0].score }  </p> 
             <p> Date & Time: { timeHandler (game.date) } </p>
-            <p> Odds: { game.competitions[0].odds[0].details } </p>
-            <p> Over/Under: { game.competitions[0].odds[0].overUnder } </p>
+            {/* <p> Odds: { game.competitions[0].odds[0].details } </p> */}
+            {/* <p> Over/Under: { game.competitions[0].odds[0].overUnder } </p> */}
             <p> Time: { game.status.displayClock } </p>
-            <p> Period: { game.status.period } </p>
+            <p> Period: { game.competitions[0].status.period} </p>
          </div>
 
         );

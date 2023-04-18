@@ -24,9 +24,7 @@ img {
 }
 
 .newCard{
-  top: 70px;    
-  justify-content: center;
-  flex-wrap: wrap;
+  
   width: 75%;
 }
 
