@@ -87,6 +87,7 @@ let timeHandler = (time) => {
       <img src={background} alt="NHL LOGO" />
       <div className="card">
       <h2>NHL Schedule</h2>
+      <div className= "newCard">
       {schedule.events.map((game) => {
         
         return (
@@ -101,8 +102,8 @@ let timeHandler = (time) => {
 
         );
         
-      
       })}
+      </div>
     
       
       </div>
