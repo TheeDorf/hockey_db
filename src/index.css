@@ -4,20 +4,28 @@
   align-items: center;
   color: black;
   position: relative;
-  /* background-image:  linear-gradient(to top, transparent, white 150%), url('./assets/NHL_Logo.png');
-  background-size: 1000px 1000px;
-  background-repeat: no-repeat;
-  background-position: center; */
+  justify-content: center;
 }
 
-img{
+img {
   opacity: 0.3;
-  
+  position: relative;
+  height: auto;
+  top: 10%;
 }
 
-.card{
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
   position: absolute;
   top: 70px;
+}
+
+
+h2 {
+  text-align: center;
+  
 }
 
 .live-scores-container {
@@ -25,11 +33,9 @@ img{
   flex-direction: column;
   align-items: center;
   color: black;
- 
-
 }
 
-.live-box{
+.live-box {
   border: 5px solid black;
   padding: 20px;
   margin-bottom: 10px;
@@ -41,15 +47,33 @@ img{
   border: 5px solid black;
   padding: 20px;
   margin-bottom: 10px;
-  
   color: black;
   background-color: silver;
-
 }
 
-.title{
+.title {
   color: black;
   font-size: 300%;
 }
 
+@media only screen and (max-width: 768px) {
+  .element {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
 
+@media (min-width: 768px) {
+  .live-scores-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .live-box,
+  .game-box {
+    flex-basis: 45%;
+    margin: 5px;
+  }
+}

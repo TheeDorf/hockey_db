@@ -54,23 +54,7 @@ const LiveScores = () => {
   };
   
   
-//   let timeHandler = (time) => {
-//     console.log(time)
-//     let start = time.indexOf("T")
-//     let end = time.indexOf("Z")
-//     let num = parseInt(time.substring(start, end).replace("T", "").replace(":", ""));
-    
-//   if ( num == 0) {
-//     num = 2400;
-    
-//   }
-//   let temp = (num- 400) > 1200 ? num-400 - 1200 +"pm EST" : num-400+"am EST";
 
-// let utcDate = new Date(new Date(time).toISOString().replace("Z", "+0000")).toString()
-
- 
-//   return utcDate
-// }
 let timeHandler = (time) => {
   let date = new Date(time);
   let options = {
@@ -92,7 +76,7 @@ let timeHandler = (time) => {
  fetchGames();
    timeHandler("2023-04-15T00:00Z")
   }, []);
-  console.log("test",games)
+  console.log("screenshot if showing",games)
   if (isLoading)
   {return <h1>Loading</h1>
     
@@ -115,10 +99,10 @@ let timeHandler = (time) => {
             <p> Period: { game.status.period } </p>
          </div>
 
-        ); 
+        );
         
       
-      })};
+      })}
     
       
       </div>
