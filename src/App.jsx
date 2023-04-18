@@ -40,37 +40,52 @@ const LiveScores = () => {
   setIsLoading(false)
  });
   
- fetch(
-  "http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news"
-)
-.then(response => response.json())
-.then ((news) => {
-setNews(news)
-console.log(news)
-}).catch (err=> console.error(err)).finally(()=> {
-setIsLoading(false)
-});
+//  fetch(
+//   "http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news"
+// )
+// .then(response => response.json())
+// .then ((news) => {
+// setNews(news)
+// console.log(news)
+// }).catch (err=> console.error(err)).finally(()=> {
+// setIsLoading(false)
+// });
   
   };
   
   
-  let timeHandler = (time) => {
-    console.log(time)
-    let start = time.indexOf("T")
-    let end = time.indexOf("Z")
-    let num = parseInt(time.substring(start, end).replace("T", "").replace(":", ""));
+//   let timeHandler = (time) => {
+//     console.log(time)
+//     let start = time.indexOf("T")
+//     let end = time.indexOf("Z")
+//     let num = parseInt(time.substring(start, end).replace("T", "").replace(":", ""));
     
-  if ( num == 0) {
-    num = 2400;
+//   if ( num == 0) {
+//     num = 2400;
     
-  }
-  let temp = (num- 400) > 1200 ? num-400 - 1200 +"pm EST" : num-400+"am EST";
+//   }
+//   let temp = (num- 400) > 1200 ? num-400 - 1200 +"pm EST" : num-400+"am EST";
 
-let utcDate = new Date(new Date(time).toISOString().replace("Z", "+0000")).toString()
+// let utcDate = new Date(new Date(time).toISOString().replace("Z", "+0000")).toString()
 
  
-  return utcDate
-}
+//   return utcDate
+// }
+let timeHandler = (time) => {
+  let date = new Date(time);
+  let options = {
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+    timeZone: "America/New_York",
+  };
+  let formattedDate = date.toLocaleString("en-US", options);
+  formattedDate += " EST";
+  return formattedDate;
+};
 
 
   useEffect(() => {
