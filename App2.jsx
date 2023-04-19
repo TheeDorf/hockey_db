@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import LiveScores from './components/liveScores';
 import TeamsList from './components/teamsList';
 import NHLNews from './components/news';
-
 
 const NavBar = () => {
   return (
@@ -27,11 +26,11 @@ const App = () => {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route exact path="/" element={<LiveScores/>} ></Route>
-        <Route exact path="/teams" element={<TeamsList/>} ></Route>
-        <Route exact path="/news" element={<NHLNews/>} ></Route>
-      </Routes>
+      <Switch>
+        <Route exact path="/" component={LiveScores} />
+        <Route exact path="/teams" component={TeamsList} />
+        <Route exact path="/news" component={NHLNews} />
+      </Switch>
     </Router>
   );
 };
