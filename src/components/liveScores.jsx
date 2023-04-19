@@ -31,16 +31,7 @@ const LiveScores = () => {
   setIsLoading(false)
  });
   
- fetch(
-  "http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news"
-)
-.then(response => response.json())
-.then ((news) => {
-setNews(news)
-console.log(news)
-}).catch (err=> console.error(err)).finally(()=> {
-setIsLoading(false)
-});
+
   
   };
   
@@ -76,10 +67,10 @@ let timeHandler = (time) => {
   
   return (
     <div className="live-scores-container">
-      <h2>NHL Scores</h2>
       <img className="backgroundImg" src={background} alt="NHL LOGO" />
       <div className="card">
       <div className="newCard">
+      <h2 className="scores" >NHL Scores</h2>
           {schedule.events.map((game, index) => {
             const isGameSelected = index === selectedGame;
             return (

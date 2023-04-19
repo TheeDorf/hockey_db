@@ -3,25 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LiveScores from './components/liveScores';
 import TeamsList from './components/teamsList';
 import NHLNews from './components/news';
+import NavBar from './components/NavBar'
 
 
-const NavBar = () => {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Live Scores</Link>
-        </li>
-        <li>
-          <Link to="/teams">Teams List</Link>
-        </li>
-        <li>
-          <Link to="/news">News</Link>
-        </li>
-      </ul>
-    </nav>
-  );
-};
+
 
 const App = () => {
   return (

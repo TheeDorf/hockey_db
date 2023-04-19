@@ -21,8 +21,8 @@ const TeamsList = () => {
    
    <div>
       
-      <h1>NHL Teams</h1>
       <img className="backgroundImg" src={background} alt="NHL LOGO" />
+      <h1>NHL Teams</h1>
       {teams.map((team) => (
         <div key={team.id}>
           <h2>{team.location}</h2>

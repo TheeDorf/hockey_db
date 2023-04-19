@@ -7,13 +7,14 @@ nav{
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 9999;
 }
 
-/* ul { display: 'flex'; 
+ul { display: 'flex'; 
     justify-content: space-evenly;
     list-style-type: none;
     margin: 0;
-} */
+}
 
 nav ul {
   display: flex;
@@ -22,7 +23,23 @@ nav ul {
   list-style-type: none;
 }
 
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+}
 
+nav ul li a {
+  display: block;
+  border: 2px solid #000;
+  padding: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background-color: #000;
+  color: #fff;
+}
 
 .full-container {
   display: flex;
@@ -41,14 +58,18 @@ nav ul {
   
 }
 
+
 .card {
   display: flex;
   position: absolute;
-  top: 70px;    
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   justify-content: center;
   flex-wrap: wrap;
   width: 75%;
   margin: 20px;
+  z-index: 1;
 }
 
 .newCard{
@@ -56,10 +77,8 @@ nav ul {
   width: 75%;
 }
 
-
-h2 {
+.scores{
   text-align: center;
-  
 }
 
 .live-scores-container {
@@ -104,6 +123,7 @@ h2 {
   justify-content: center;
   color: black;
 }
+
 .newsCard{
   border: 5px solid black;
   padding: 20px;
@@ -111,6 +131,7 @@ h2 {
   color: black;
   background-color: silver;
 }
+
 @media only screen and (max-width: 768px) {
   .element {
     position: fixed;
