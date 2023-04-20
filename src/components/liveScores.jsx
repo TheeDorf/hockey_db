@@ -58,7 +58,7 @@ let timeHandler = (time) => {
  fetchGames();
    timeHandler("2023-04-15T00:00Z")
   }, []);
-  console.log("screenshot if showing",games)
+  
   if (isLoading)
   {return <h1>Loading</h1>
     
@@ -70,7 +70,7 @@ let timeHandler = (time) => {
       <img className="backgroundImg" src={background} alt="NHL LOGO" />
       <div className="card">
       <div className="newCard">
-      <h2 className="scores" >NHL Scores</h2>
+      <h1 className="scores" >NHL Scores</h1>
           {schedule.events.map((game, index) => {
             const isGameSelected = index === selectedGame;
             return (
@@ -82,8 +82,8 @@ let timeHandler = (time) => {
                     <img className="teamLogo" src={ game.competitions[0].competitors[0].team.logo } alt="" />
                     <p>Away Score: { game.competitions[0].competitors[1].score } --- Home Score: { game.competitions[0].competitors[0].score }</p> 
                     <p>Date & Time: { timeHandler (game.date) }</p>
-                    <p>Odds: { game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started" }</p>
-                    <p>Over/Under: { game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started" }</p>
+                    {/* <p>Odds: { game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started" }</p> */}
+                    {/* <p>Over/Under: { game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started" }</p> */}
                     <p>Time: { game.status.displayClock }</p>
                     <p>Period: { game.competitions[0].status.period }</p>
                   </>
