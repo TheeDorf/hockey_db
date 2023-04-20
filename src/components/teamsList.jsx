@@ -27,9 +27,9 @@ const TeamsList = () => {
             <div key={team.id} className="team-card">
               <h2>{team.location}</h2>
               <img src={team.logo} alt={team.location} />
-              <p>Abbreviation: {team.abbreviation}</p>
-              <p>Conference: {team.conference?.name}</p>
-              <p>Division: {team.division?.name}</p>
+              <p>Abbreviation: {team.team.abbreviation}</p>
+              <p>Conference: {team.team.conference.name}</p>
+              <p>Division: {team.team.division.name}</p>
             </div>
           ))}
         </div>
