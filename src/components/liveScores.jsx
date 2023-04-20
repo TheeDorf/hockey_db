@@ -82,8 +82,8 @@ let timeHandler = (time) => {
                     <img className="teamLogo" src={ game.competitions[0].competitors[0].team.logo } alt="" />
                     <p>Away Score: { game.competitions[0].competitors[1].score } --- Home Score: { game.competitions[0].competitors[0].score }</p> 
                     <p>Date & Time: { timeHandler (game.date) }</p>
-                    {/* <p>Odds: { game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started" }</p> */}
-                    {/* <p>Over/Under: { game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started" }</p> */}
+                    <p>Odds: { game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started" }</p>
+                    <p>Over/Under: { game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started" }</p>
                     <p>Time: { game.status.displayClock }</p>
                     <p>Period: { game.competitions[0].status.period }</p>
                   </>

@@ -113,6 +113,10 @@ nav ul li a:hover {
  padding: 10px;
 }
 
+.teamListLogo{
+  width: 5em;
+}
+
 .title {
   color: black;
   font-size: 300%;

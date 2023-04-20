@@ -23,13 +23,13 @@ const TeamsList = () => {
       <div className="team">
         <h1>NHL Teams</h1>
         <div className="teams-grid">
-          {teams.map((team) => (
-            <div key={team.id} className="team-card">
-              <h2>{team.location}</h2>
-              <img src={team.logo} alt={team.location} />
-              <p>Abbreviation: {team.team.abbreviation}</p>
-              <p>Conference: {team.team.conference.name}</p>
-              <p>Division: {team.team.division.name}</p>
+          {teams.map((num) => (
+            <div key={num.team.id} className="team-card">
+              <h2>{num.team.location}</h2>
+              <img className="teamListLogo" src={num.team.logos[0].href} alt={num.team.location} />
+              <p>Abbreviation: {num.team.abbreviation}</p>
+              <p>Team Name: {num.team.shortDisplayName}</p>
+              {/* <p>Division: {num.team.division.name}</p> */}
             </div>
           ))}
         </div>
