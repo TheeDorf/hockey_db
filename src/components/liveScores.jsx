@@ -63,7 +63,25 @@ let timeHandler = (time) => {
   {return <h1>Loading</h1>
     
   }
+  const overUnderArr= [];
+ const oddsArr = [];
+ const gameNameArr= [];
+ schedule.events.forEach((game)=>{
+  oddsArr.push(game.competitions[0].odds[0].details)
+  overUnderArr.push(game.competitions[0].odds[0].overUnder)
   
+ })
+ console.log(overUnderArr)
+  let odds = schedule.events[0].competitions[0].odds[0].details
+  let overUnder = schedule.events[0].competitions[0].odds[0].overUnder
+  const localSArr= [];
+  // localSArr.push(schedule.events[0].name)
+
+    
+  oddsArr.forEach((gameName)=>{
+    localStorage.setItem(`Odds: ${gameName}`, gameName)})
+    overUnderArr.forEach((gameName)=>{
+      localStorage.setItem(`Over/Under: ${gameName}`, gameName)})
   
   return (
     <div className="live-scores-container">
@@ -75,6 +93,7 @@ let timeHandler = (time) => {
             const isGameSelected = index === selectedGame;
             return (
               <div className="game-box" key={game.id}>
+                
                 <h3 onClick={()=> setSelectedGame(isGameSelected ? -1 : index)}>{ game.name }</h3>
                 {isGameSelected && (
                   <>
@@ -82,8 +101,10 @@ let timeHandler = (time) => {
                     <img className="teamLogo" src={ game.competitions[0].competitors[0].team.logo } alt="" />
                     <p>Away Score: { game.competitions[0].competitors[1].score } --- Home Score: { game.competitions[0].competitors[0].score }</p> 
                     <p>Date & Time: { timeHandler (game.date) }</p>
-                    <p>Odds: { game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started" }</p>
-                    <p>Over/Under: { game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started" }</p>
+                    <p>Odds: { odds == undefined ? `Game Started Last Odds Were: Unavailable`  
+                    
+                     : odds   }</p>
+                    <p>Over/Under: { overUnder == undefined ? "Game Started" : overUnder }</p>
                     <p>Time: { game.status.displayClock }</p>
                     <p>Period: { game.competitions[0].status.period }</p>
                   </>

@@ -35,10 +35,12 @@ nav ul li a {
   padding: 5px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  background-color: black;
+  color: white;
 }
 
 nav ul li a:hover {
-  background-color: #000;
+  background-color: purple;
   color: #fff;
 }
 
@@ -89,6 +91,7 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   color: black;
+ 
 }
 
 .live-box {
@@ -144,7 +147,7 @@ nav ul li a:hover {
   width: 100%;
   max-width: 800px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-  
+  opacity: .9; 
 }
 
 .teams-grid {
@@ -163,11 +166,20 @@ nav ul li a:hover {
 
 
 .newsCard{
-  border: 5px solid black;
-  padding: 20px;
-  margin-bottom: 10px;
+ border: 5px solid black;
+ opacity: .9;
   color: black;
   background-color: silver;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: 20px;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 768px) {
