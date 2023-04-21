@@ -1,34 +1,29 @@
-# Getting Started 
+# About
 
-This project was created by AJ Dorfman as a Final Project for my TrueCoders course
-## Available Scripts
+This is a React app that displays live NHL scores, odds, news and a full list of NHL teams. It retrieves data from the ESPN API and displays it in a simple and intuitive way.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+To get started with this project, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone the repository to your local machine
+Run `npm install` to install the required dependencies
+Start the development server with `npm start`
+Navigate to `http://localhost:3000` in your browser to view the application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Features
 
-### `npm test`
+Displays the NHL logo as a background image
+Fetches live game data from the ESPN API
+Shows the name of each game and the logos of the teams playing
+Allows users to click on a game to see more detailed information, including the current score, date and time, odds, over/under, period, and display clock
+Persists the odds and over/under values in local storage for future reference
+Fetches NHL news from the ESPN API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Technologies Used
+React
+ESPN API
+Local Storage API
 
-
-
-## Learn More
-
-The purpose of this app is to provide a quick and concise location to come and check the daily NHL schedule and live scores of games that are in progress.
-
-
-
-
-
-
-
-
-#
+##### Credits
+This app was created by TheeDorf. 
