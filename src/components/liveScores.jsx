@@ -6,15 +6,14 @@ const LiveScores = () => {
   const [schedule, setSchedule] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [selectedGame, setSelectedGame] = useState(-1);
-  const [odds, setOdds]= useState();
-  const [overUnder, setOverUnder]= useState();
+ 
 
   const fetchGames = async () => {
-   
     fetch("http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard")
       .then((response) => response.json())
       .then((data) => {
         setSchedule(data);
+
         console.log(data);
       })
       .catch((err) => console.error(err))
@@ -38,11 +37,20 @@ const LiveScores = () => {
     formattedDate += " EST";
     return formattedDate;
   };
-
   useEffect(() => {
     fetchGames();
     timeHandler("2023-04-15T00:00Z");
-  }, [isLoading]);
+  }, []);
+  // useEffect(() => {
+  //   if (schedule.events[0].competitions[0].odds !== undefined) {
+  //     setOdds(schedule.events[0].competitions[0].odds[0].details);
+  //     setOverUnder(schedule.events[0].competitions[0].odds[0].overUnder);
+  //     schedule.events.forEach((game) => {
+  //       oddsArr.push(game.competitions[0].odds[0].details);
+  //       overUnderArr.push(game.competitions[0].odds[0].overUnder);
+  //     });
+  //   }
+  // }, [schedule]);
 
   if (isLoading) {
     return <h1>Loading</h1>;
@@ -51,17 +59,7 @@ const LiveScores = () => {
   const oddsArr = [];
   const gameNameArr = [];
 
-
-  if (schedule.events[0].competitions[0].odds !== undefined) {
-    setOdds( schedule?.events[0]?.competitions[0]?.odds[0]?.details);
-    setOverUnder (schedule?.events[0]?.competitions[0]?.odds[0]?.overUnder);
-    schedule.events.forEach((game) => {
-      oddsArr.push(game.competitions[0].odds[0].details);
-      overUnderArr.push(game.competitions[0].odds[0].overUnder);
-    });
-  }
- console.log(oddsArr);
- console.log(overUnderArr);
+  
   const localSArr = [];
   // localSArr.push(schedule.events[0].name)
 
@@ -72,6 +70,15 @@ const LiveScores = () => {
     localStorage.setItem(`Over/Under: ${gameName}`, gameName);
   });
 
+  // if (schedule.events[0].competitions[0].odds !== undefined) {
+  //   setOdds(schedule.events[0].competitions[0].odds[0].details);
+  //   setOverUnder(schedule.events[0].competitions[0].odds[0].overUnder);
+  //   schedule.events.forEach((game) => {
+  //     oddsArr.push(game.competitions[0].odds[0].details);
+  //     overUnderArr.push(game.competitions[0].odds[0].overUnder);
+  //   });
+  // }
+
   return (
     <div className="live-scores-container">
       <img className="backgroundImg" src={background} alt="NHL LOGO" />
@@ -80,15 +87,16 @@ const LiveScores = () => {
           <h1 className="scores">NHL Scores</h1>
           {schedule.events.map((game, index) => {
             const isGameSelected = index === selectedGame;
+            
             return (
               <div className="game-box" key={game.id}>
                 <h3
                   onClick={() => setSelectedGame(isGameSelected ? -1 : index)}
                 >
-                  {game.name}
+                  {game.name} 
                 </h3>
                 {isGameSelected && (
-                  <>
+                  <> 
                     <img
                       className="teamLogo"
                       src={game.competitions[0].competitors[1].team.logo}
@@ -106,16 +114,12 @@ const LiveScores = () => {
                     </p>
                     <p>Date & Time: {timeHandler(game.date)}</p>
                     <p>
-                      Odds:{" "}
-                      {odds == undefined
-                        ? `Game Started Last Odds Were: Unavailable`
-                        : odds}
+                      Odds:
+                      {game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started Odds Unavailable" }
                     </p>
                     <p>
-                      Over/Under:{" "}
-                      {overUnder == undefined
-                        ? `Game Started Last Over/Under was: Unavailable`
-                        : overUnder}
+                      Over/Under:
+                      {game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started Over/Under Unavailable"}
                     </p>
                     {/* <p>Over/Under: { overUnder == undefined ? "Game Started" : overUnder }</p> */}
                     <p>Time: {game.status.displayClock}</p>
