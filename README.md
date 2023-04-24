@@ -11,6 +11,9 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 * Start the development server with `npm start`
 * Navigate to `http://localhost:3000` in your browser to view the application
 
+## What-I-Learned
+* 
+
 ### Features
 
 * Displays the NHL logo as a background image
@@ -19,6 +22,9 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 * Allows users to click on a game to see more detailed information, including the current score, date and time, odds, over/under, period, and display clock
 * Persists the odds and over/under values in local storage for future reference
 * Fetches NHL news from the ESPN API
+* ! [News Photo](./src/assets/NewsPic.png)
+* Fetches a league team list and logos 
+* ! [TeamsList](./src/assets/TeamsListPic.png)
 
 #### Technologies Used
 * React
@@ -29,3 +35,8 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 ##### Credits
 
 This app was created by TheeDorf. 
+
+
+######
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
+
