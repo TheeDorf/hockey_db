@@ -12,8 +12,36 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 * Navigate to `http://localhost:3000` in your browser to view the application
 
 ## What-I-Learned
-* 
+* The first the I learned in creating this app is finding a great API is probably the most difficult part.
+* I also enjoyed learning about a timeHandler and how to convert time from UTC into EST using this method: 
+```
+    let timeHandler = (time) => {
+    let date = new Date(time);
+    let options = {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      timeZone: "America/New_York",
+    };
+    let formattedDate = date.toLocaleString("en-US", options);
+    formattedDate += " EST";
+    return formattedDate;
+  };
+```
 
+* Being that my API has data the disappears when a game starts. I enjoyed learning the aspects of local storage and how I can save the data to display once it is already gone from the API array:
+```
+  oddsArr.forEach((gameName) => {
+    localStorage.setItem(`Odds: ${gameName}`, gameName);
+  });
+  overUnderArr.forEach((gameName) => {
+    localStorage.setItem(`Over/Under: ${gameName}`, gameName);
+  });
+  ```
+  
 ### Features
 
 * Displays the NHL logo as a background image

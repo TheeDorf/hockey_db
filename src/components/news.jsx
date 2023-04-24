@@ -33,9 +33,9 @@ const NHLNews = () => {
     <div className="news">
       <img className="backgroundImg" src={background} alt="NHL LOGO" />
       <div className="newsCard" >
-      <h2>NHL News</h2>
+      <h2 className= "newsTitle" >NHL News</h2>
       {news.map((article, index) => (
-        <div key={index}>
+        <div className="article" key={index}>
           <h3>{article.headline}</h3>
           <p>{article.description}</p>
           <a href={article.links.web.href} target="_blank" rel="noreferrer">Read more</a>
