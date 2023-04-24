@@ -8,6 +8,7 @@ nav{
   position: fixed;
   top: 0;
   opacity: .5;
+  z-index: 2;
 
 }
 
@@ -60,6 +61,15 @@ nav ul li a:hover {
   top: 10%;
  z-index: -1;
   
+}
+
+.teamBackgroundImg{
+  opacity: 0.5;
+  position: relative;
+  height: 300px;
+  top: 10%;
+ z-index: -1;
+
 }
 
 
@@ -139,6 +149,10 @@ nav ul li a:hover {
   align-items: center;
 }
 
+.teamTitle{
+  text-align: center;
+}
+
 .team {
   
   background-color: white;
@@ -174,12 +188,14 @@ nav ul li a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   justify-content: center;
   flex-wrap: wrap;
   width: 75%;
   margin: 20px;
   z-index: 1;
+  transform: translate(-50%, 0);
+
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -214,5 +230,11 @@ nav ul li a:hover {
 @media screen and (max-width: 600px) {
   .teams-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .newsCard {
+    top: 100px; /* or any other appropriate value to ensure it stays below the nav bar */
   }
 }

@@ -19,9 +19,9 @@ const TeamsList = () => {
 
   return (
     <div className="teams-container">
-      <img className="backgroundImg" src={background} alt="NHL LOGO" />
+      <img className="teamBackgroundImg" src={background} alt="NHL LOGO" />
       <div className="team">
-        <h1>NHL Teams</h1>
+        <h1 className= "teamTitle">NHL Teams</h1>
         <div className="teams-grid">
           {teams.map((num) => (
             <div key={num.team.id} className="team-card">
