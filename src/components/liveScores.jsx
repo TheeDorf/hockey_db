@@ -65,13 +65,13 @@ const LiveScores = () => {
   //   oddsArr.push(game.competitions[0].odds[0].details);
   //   overUnderArr.push(game.competitions[0].odds[0].overUnder);
   // });
-  // oddsArr.forEach((gameName) => {
-  //   localStorage.setItem(`Odds: ${gameName}`, gameName);
-  // });
-  //   // if there are duplicates in the key they will be overwritten
-  // overUnderArr.forEach((gameName) => {
-  //   localStorage.setItem(`Over/Under: ${gameName}`, gameName);
-  // });
+  oddsArr.forEach((gameName) => {
+    localStorage.setItem(`Odds: ${gameName}`, gameName);
+  });
+    // if there are duplicates in the key they will be overwritten
+  overUnderArr.forEach((gameName) => {
+    localStorage.setItem(`Over/Under: ${gameName}`, gameName);
+  });
 
   return (
     <div className="live-scores-container">
@@ -122,7 +122,7 @@ const LiveScores = () => {
                       game.competitions[0].odds[0] &&
                       game.competitions[0].odds[0].details
                         ? game.competitions[0].odds[0].details
-                        : "Game Started Odds Unavailable"}
+                        : " Unavailable: Game Started"}
                     </p>
                     <p>
                       Over/Under:
@@ -130,7 +130,7 @@ const LiveScores = () => {
                       game.competitions[0].odds[0] &&
                       game.competitions[0].odds[0].overUnder
                         ? game.competitions[0].odds[0].overUnder
-                        : "Game Started Over/Under Unavailable"}
+                        : " Unavailable: Game Started"}
                     </p>
 
                     <p>Time: {game.status.displayClock}</p>

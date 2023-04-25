@@ -1,8 +1,18 @@
-# About
+# Description
 
 This is a React app that displays live NHL scores, odds, news and a full list of NHL teams. It retrieves data from the ESPN API and displays it in a simple and intuitive way.
 
-## Getting Started
+# Table of Contents
+- [Installation](#Installation)
+- [Description](#Description)
+- [What-I-learned](#What-I-Learned)
+- [Usage](#Usage)
+- [Links](#Links)
+- [Technologies-Used](#Technologies-Used)
+- [Questions?](#Questions?)
+- [Credits](#Credits)
+- [License](#License)
+## Installation
 
 * To get started with this project, follow these steps:
 
@@ -42,11 +52,11 @@ This is a React app that displays live NHL scores, odds, news and a full list of
   });
   ```
 
-### Features
+### Usage
 
 * Displays the NHL logo as a background image
 * Fetches live game data from the ESPN API
-* <img src="./src/assets/livescoresMain.png" width="500" height="500">
+* ![LiveScores](./src/assets/livescoresMain.png)
 * Shows the name of each game and the logos of the teams playing
 * Allows users to click on a game to see more detailed information, including the current score, date and time, odds, over/under, period, and display clock
 * Persists the odds and over/under values in local storage for future reference
@@ -55,17 +65,19 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 * Fetches a league team list and logos 
 * ![TeamsList](./src/assets/TeamsListPic.png)
 
-#### Technologies Used
+#### Technologies-Used
 * React
 * JavaScript
 * ESPN API
 * Local Storage API
 
+
+#### Questions?
 ##### Credits
 
 This app was created by TheeDorf. 
 
 
-######
-[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
+###### License
+[![License: TheeDorf](./src/assets/TheeDorfMITLic.rtf)]
 
