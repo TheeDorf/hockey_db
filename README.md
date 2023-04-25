@@ -71,13 +71,10 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 * ESPN API
 * Local Storage API
 
-
 #### Questions?
+My gitHub user name is TheeDorf, and you may email me at ajdorfman91@gmail.com for Questions.
 ##### Credits
-
 This app was created by TheeDorf. 
-
-
 ###### License
-[![License: TheeDorf](./src/assets/TheeDorfMITLic.rtf)]
+[[License: TheeDorf](./src/assets/TheeDorfMITLic.rtf)]
 
