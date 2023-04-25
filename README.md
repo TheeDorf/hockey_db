@@ -7,7 +7,7 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 - [Description](#Description)
 - [What-I-learned](#What-I-Learned)
 - [Usage](#Usage)
-- [Links](#Links)
+- [Screenshot-of-Application](#Screenshot-of-Application)
 - [Technologies-Used](#Technologies-Used)
 - [Questions?](#Questions?)
 - [Credits](#Credits)
@@ -56,16 +56,17 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 
 * Displays the NHL logo as a background image
 * Fetches live game data from the ESPN API
-* ![LiveScores](./src/assets/livescoresMain.png)
+ ![LiveScores](./src/assets/livescoresMain.png)
 * Shows the name of each game and the logos of the teams playing
 * Allows users to click on a game to see more detailed information, including the current score, date and time, odds, over/under, period, and display clock
 * Persists the odds and over/under values in local storage for future reference
 * Fetches NHL news from the ESPN API
-* ![News Photo](./src/assets/NewsPic.png)
+ ![News Photo](./src/assets/NewsPic.png)
 * Fetches a league team list and logos 
-* ![TeamsList](./src/assets/TeamsListPic.png)
+ ![TeamsList](./src/assets/TeamsListPic.png)
 
-#### Technologies-Used
+### Screenshot of Application
+### Technologies-Used
 * React
 * JavaScript
 * ESPN API
@@ -73,8 +74,8 @@ This is a React app that displays live NHL scores, odds, news and a full list of
 
 #### Questions?
 My gitHub user name is TheeDorf, and you may email me at ajdorfman91@gmail.com for Questions.
-##### Credits
+#### Credits
 This app was created by TheeDorf. 
-###### License
+#### License
 [[License: TheeDorf](./src/assets/TheeDorfMITLic.rtf)]
 
