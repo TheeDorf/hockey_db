@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LiveScores from './components/liveScores';
 import TeamsList from './components/teamsList';
 import NHLNews from './components/news';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
+
 
 
 

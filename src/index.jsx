@@ -3,14 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LiveScores from './App';
 import reportWebVitals from './reportWebVitals';
+import NHLNews from './components/news'
+import TeamsList from './components/teamsList'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <LiveScores />
+    <LiveScores />,
+    <NHLNews />,
+    <TeamsList />
   // </React.StrictMode>
 );
+
+
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

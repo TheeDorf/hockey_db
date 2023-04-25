@@ -66,6 +66,7 @@ This is a React app that displays live NHL scores, odds, news and a full list of
  ![TeamsList](./src/assets/TeamsListPic.png)
 
 ### Screenshot of Application
+![Video-Walk-Through](./src/assets/React%20App.gif)
 ### Technologies-Used
 * React
 * JavaScript
