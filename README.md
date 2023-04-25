@@ -41,18 +41,19 @@ This is a React app that displays live NHL scores, odds, news and a full list of
     localStorage.setItem(`Over/Under: ${gameName}`, gameName);
   });
   ```
-  
+
 ### Features
 
 * Displays the NHL logo as a background image
 * Fetches live game data from the ESPN API
+* <img src="./src/assets/livescoresMain.png" width="500" height="500">
 * Shows the name of each game and the logos of the teams playing
 * Allows users to click on a game to see more detailed information, including the current score, date and time, odds, over/under, period, and display clock
 * Persists the odds and over/under values in local storage for future reference
 * Fetches NHL news from the ESPN API
-* ! [News Photo](./src/assets/NewsPic.png)
+* ![News Photo](./src/assets/NewsPic.png)
 * Fetches a league team list and logos 
-* ! [TeamsList](./src/assets/TeamsListPic.png)
+* ![TeamsList](./src/assets/TeamsListPic.png)
 
 #### Technologies Used
 * React

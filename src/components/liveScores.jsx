@@ -6,7 +6,6 @@ const LiveScores = () => {
   const [schedule, setSchedule] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [selectedGame, setSelectedGame] = useState(-1);
- 
 
   const fetchGames = async () => {
     fetch("http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard")
@@ -59,25 +58,20 @@ const LiveScores = () => {
   const oddsArr = [];
   const gameNameArr = [];
 
-  
   const localSArr = [];
   // localSArr.push(schedule.events[0].name)
 
-  oddsArr.forEach((gameName) => {
-    localStorage.setItem(`Odds: ${gameName}`, gameName);
-  });
-  overUnderArr.forEach((gameName) => {
-    localStorage.setItem(`Over/Under: ${gameName}`, gameName);
-  });
-
-  // if (schedule.events[0].competitions[0].odds !== undefined) {
-  //   setOdds(schedule.events[0].competitions[0].odds[0].details);
-  //   setOverUnder(schedule.events[0].competitions[0].odds[0].overUnder);
-  //   schedule.events.forEach((game) => {
-  //     oddsArr.push(game.competitions[0].odds[0].details);
-  //     overUnderArr.push(game.competitions[0].odds[0].overUnder);
-  //   });
-  // }
+  // schedule.events.forEach((game) => {
+  //   oddsArr.push(game.competitions[0].odds[0].details);
+  //   overUnderArr.push(game.competitions[0].odds[0].overUnder);
+  // });
+  // oddsArr.forEach((gameName) => {
+  //   localStorage.setItem(`Odds: ${gameName}`, gameName);
+  // });
+  //   // if there are duplicates in the key they will be overwritten
+  // overUnderArr.forEach((gameName) => {
+  //   localStorage.setItem(`Over/Under: ${gameName}`, gameName);
+  // });
 
   return (
     <div className="live-scores-container">
@@ -87,16 +81,16 @@ const LiveScores = () => {
           <h1 className="scores">NHL Scores</h1>
           {schedule.events.map((game, index) => {
             const isGameSelected = index === selectedGame;
-            
+
             return (
               <div className="game-box" key={game.id}>
                 <h3
                   onClick={() => setSelectedGame(isGameSelected ? -1 : index)}
                 >
-                  {game.name} 
+                  {game.name}
                 </h3>
                 {isGameSelected && (
-                  <> 
+                  <>
                     <img
                       className="teamLogo"
                       src={game.competitions[0].competitors[1].team.logo}
@@ -113,15 +107,32 @@ const LiveScores = () => {
                       {game.competitions[0].competitors[0].score}
                     </p>
                     <p>Date & Time: {timeHandler(game.date)}</p>
-                    <p>
+                    {/* <p>
                       Odds:
                       {game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started Odds Unavailable" }
                     </p>
                     <p>
                       Over/Under:
                       {game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started Over/Under Unavailable"}
+                    </p> */}
+
+                    <p>
+                      Odds:
+                      {game.competitions[0].odds &&
+                      game.competitions[0].odds[0] &&
+                      game.competitions[0].odds[0].details
+                        ? game.competitions[0].odds[0].details
+                        : "Game Started Odds Unavailable"}
                     </p>
-                    {/* <p>Over/Under: { overUnder == undefined ? "Game Started" : overUnder }</p> */}
+                    <p>
+                      Over/Under:
+                      {game.competitions[0].odds &&
+                      game.competitions[0].odds[0] &&
+                      game.competitions[0].odds[0].overUnder
+                        ? game.competitions[0].odds[0].overUnder
+                        : "Game Started Over/Under Unavailable"}
+                    </p>
+
                     <p>Time: {game.status.displayClock}</p>
                     <p>Period: {game.competitions[0].status.period}</p>
                   </>
