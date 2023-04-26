@@ -8,7 +8,7 @@ const LiveScores = () => {
   const [selectedGame, setSelectedGame] = useState(-1);
 
   const fetchGames = async () => {
-    fetch("http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard")
+    fetch("https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard")
       .then((response) => response.json())
       .then((data) => {
         setSchedule(data);
