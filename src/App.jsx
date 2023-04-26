@@ -11,14 +11,14 @@ import NavBar from './components/NavBar';
 
 const App = () => {
   return (
-    <Router>
+    <>
       <NavBar />
       <Routes>
         <Route exact path="/" element={<LiveScores/>} ></Route>
         <Route exact path="/teams" element={<TeamsList/>} ></Route>
         <Route exact path="/news" element={<NHLNews/>} ></Route>
       </Routes>
-    </Router>
+    </>
   );
 };
 
