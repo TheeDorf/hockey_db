@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/hockey_db/static/css/main.e887c4f4.css",
+    "main.css": "/hockey_db/static/css/main.00d0ba2e.css",
     "main.js": "/hockey_db/static/js/main.3dae2e86.js",
     "static/js/787.040361f4.chunk.js": "/hockey_db/static/js/787.040361f4.chunk.js",
     "static/media/NHL_Logo.png": "/hockey_db/static/media/NHL_Logo.c8db62127ed7cb690b40.png",
     "index.html": "/hockey_db/index.html",
-    "main.e887c4f4.css.map": "/hockey_db/static/css/main.e887c4f4.css.map",
+    "main.00d0ba2e.css.map": "/hockey_db/static/css/main.00d0ba2e.css.map",
     "main.3dae2e86.js.map": "/hockey_db/static/js/main.3dae2e86.js.map",
     "787.040361f4.chunk.js.map": "/hockey_db/static/js/787.040361f4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e887c4f4.css",
+    "static/css/main.00d0ba2e.css",
     "static/js/main.3dae2e86.js"
   ]
 }
