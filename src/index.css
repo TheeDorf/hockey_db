@@ -242,7 +242,7 @@ nav ul li a:hover {
   }
 }
 
-@media only screen and (max-width: 600) {
+@media only screen and (max-width: 200) {
   .newsCard {
     top: 100px; 
     width: 90%
