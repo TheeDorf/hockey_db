@@ -1,9 +1,12 @@
+body{
+  margin: 0;
+}
+
 nav{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background-color: silver;
-  padding: px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -242,11 +245,22 @@ nav ul li a:hover {
   }
 }
 
-@media only screen and (max-width: 200) {
+@media only screen and (max-width: 730px) {
   .newsCard {
-    top: 100px; 
+    top: 60%; 
     width: 90%
   }
 }
 
+
+@media only screen and (max-width: 490px) {
+  .newsCard {
+    top: 80%; 
+    
+  }
+  nav ul{
+   justify-content: flex-start;
+   
+  }
+}
 
