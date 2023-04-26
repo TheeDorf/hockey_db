@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import LiveScores from './App';
 import reportWebVitals from './reportWebVitals';
-import NHLNews from './components/news'
-import TeamsList from './components/teamsList'
+import App from './App'
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <LiveScores />,
-    <NHLNews />,
-    <TeamsList />
+    <App />
   // </React.StrictMode>
 );
 
