@@ -9,7 +9,7 @@ const NHLNews = () => {
   const fetchNews = async () => {
 
     fetch(
-      "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news"
+      "http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news"
     )
       .then(response => response.json())
       .then ((data) => {

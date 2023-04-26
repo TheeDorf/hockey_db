@@ -6,7 +6,7 @@ const TeamsList = () => {
 
   const fetchTeams = async () => {
     const response = await fetch(
-      "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams"
+      "http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams"
     );
     const data = await response.json();
     console.log(data)
