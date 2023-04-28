@@ -40,16 +40,7 @@ const LiveScores = () => {
     fetchGames();
     timeHandler("2023-04-15T00:00Z");
   }, []);
-  // useEffect(() => {
-  //   if (schedule.events[0].competitions[0].odds !== undefined) {
-  //     setOdds(schedule.events[0].competitions[0].odds[0].details);
-  //     setOverUnder(schedule.events[0].competitions[0].odds[0].overUnder);
-  //     schedule.events.forEach((game) => {
-  //       oddsArr.push(game.competitions[0].odds[0].details);
-  //       overUnderArr.push(game.competitions[0].odds[0].overUnder);
-  //     });
-  //   }
-  // }, [schedule]);
+  
 
   if (isLoading) {
     return <h1>Loading</h1>;
@@ -59,16 +50,11 @@ const LiveScores = () => {
   const gameNameArr = [];
 
   const localSArr = [];
-  // localSArr.push(schedule.events[0].name)
 
-  // schedule.events.forEach((game) => {
-  //   oddsArr.push(game.competitions[0].odds[0].details);
-  //   overUnderArr.push(game.competitions[0].odds[0].overUnder);
-  // });
   oddsArr.forEach((gameName) => {
     localStorage.setItem(`Odds: ${gameName}`, gameName);
   });
-    // if there are duplicates in the key they will be overwritten
+    
   overUnderArr.forEach((gameName) => {
     localStorage.setItem(`Over/Under: ${gameName}`, gameName);
   });
@@ -107,14 +93,7 @@ const LiveScores = () => {
                       {game.competitions[0].competitors[0].score}
                     </p>
                     <p>Date & Time: {timeHandler(game.date)}</p>
-                    {/* <p>
-                      Odds:
-                      {game.competitions[0].odds[0].details ? game.competitions[0].odds[0].details : "Game Started Odds Unavailable" }
-                    </p>
-                    <p>
-                      Over/Under:
-                      {game.competitions[0].odds[0].overUnder ? game.competitions[0].odds[0].overUnder : "Game Started Over/Under Unavailable"}
-                    </p> */}
+                  
 
                     <p>
                       Odds:

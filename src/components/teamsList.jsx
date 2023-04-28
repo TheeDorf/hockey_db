@@ -29,7 +29,7 @@ const TeamsList = () => {
               <img className="teamListLogo" src={num.team.logos[0].href} alt={num.team.location} />
               <p>Abbreviation: {num.team.abbreviation}</p>
               <p>Team Name: {num.team.shortDisplayName}</p>
-              {/* <p>Division: {num.team.division.name}</p> */}
+             
             </div>
           ))}
         </div>
