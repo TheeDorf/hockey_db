@@ -181,8 +181,12 @@ nav ul li a:hover {
   padding: 20px;
   text-align: center;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-}
 
+  transition: box-shadow .00001s ease-in-out;
+}
+.team-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
 
 .newsCard{
  border: 5px solid black;
